@@ -26,9 +26,23 @@ function changeElementText(element, answer) {
 
 function kiteGame(numberOfKites) {
     changeElementText("#numberOfKites", numberOfKites);
+
     var answer = "";
+    var startKiteFight = "Peche!";
+    var loseKiteFight = "Ipo kaate!";
+    var delimiter = " ";
 
-    // write some code here!
-
+    for (var index = 1; index <= 100; index++) {
+        if (index % 5 === 0 && index % 3 === 0) {
+            answer += startKiteFight + delimiter + loseKiteFight;
+        } else if (index % 5 === 0) {
+            answer += loseKiteFight;
+        } else if (index % 3 === 0) {
+            answer += startKiteFight;
+        } else {
+            answer += index;
+        }
+        answer += delimiter;
+    }
     changeElementText("#answer", answer);
 }
