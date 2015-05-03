@@ -27,3 +27,36 @@
 */
 
 // Write your JavaScript here
+
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+function isValidRupee(amount) {
+    return (amount % 5 === 0 ||
+            amount % 10 === 0 ||
+            amount % 20 === 0 ||
+            amount % 50 === 0 ||
+            amount % 100 === 0 ||
+            amount % 500 === 0 ||
+            amount % 1000 === 0)
+}
+
+function countMoney() {
+    var sum = 0;
+    for (var index = 0; index < arguments.length; index++) {
+        var currentAmount = arguments[index];
+        if (isValidRupee(currentAmount)) {
+            sum += currentAmount;
+        } else {
+            break;
+        }
+    }
+    return sum;
+}
+
+function runProblemFourExercises() {
+    changeElementText("#totalOne", countMoney(10, 20, 100));
+    changeElementText("#totalTwo", countMoney(20, 50, 10, 20, 13, 500));
+}
+
