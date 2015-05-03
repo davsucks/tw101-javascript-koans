@@ -33,4 +33,22 @@
      count: 7
  */
 
-// Write your JavaScript here
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+function reverseUrduWords(advertisement) {
+    advertisement[2] = advertisement[2].reverse()
+}
+
+function concatenateAdvertisements(advertisement) {
+    return advertisement[0].concat(advertisement[1].concat(advertisement[2]));
+}
+
+function fixAdvertisement(advertisement) {
+    reverseUrduWords(advertisement);
+    var concatenatedWords = concatenateAdvertisements(advertisement);
+    var joinedWords = concatenatedWords.join(", ");
+    changeElementText("#fixedAdvertisement", joinedWords);
+    changeElementText("#advertisementWordCount", concatenatedWords.length)
+}

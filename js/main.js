@@ -13,6 +13,10 @@ $(document).ready(function() {
     runProblemFourExercises();
 
     // Problem 5
-    // call your problem 5 code here
+    fixAdvertisement( [
+        ["zara", "dhyaan", "dein"],
+        ["mazarat", "chahenge"],
+        ["attention", "please"]
+    ]);
 
 });
